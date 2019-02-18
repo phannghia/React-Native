@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 
-import {Text, View, Image, Alert, Platform, Button} from "react-native";
+import {Text, View, Image, Alert, Platform} from "react-native";
 //import {connect} from "react-redux";
 //import {increaseAction, decreaseAction} from "../actions/Index"
 
-//import Button from 'react-native-button';
+import Button from 'react-native-button';
 
 export default class CounterComponents extends Component {
     render() {
-        console.log("this.props");
-        console.log(this.props);
+
         return (
             <View style={{flex: 1, marginTop: Platform.OS === 'ios' ? 34 : 0}}>
                 <Text style={{margin: 20, fontWeight: 'bold', color: 'forestgreen', fontSize: 20}}>
@@ -20,10 +19,12 @@ export default class CounterComponents extends Component {
                     <Button containerStyle={{padding: 10, height: 45, borderRadius: 10, backgroundColor: 'darkviolet'}}
                             style={{fontSize: 18, color: 'white'}}
                             onPress={() => {
-                                this.props.onDecrement(1)
+                                this.props.onDecrement(2)
                             }}
-                            title={"Decrement -"}
-                    />
+                            //title={"Decrement -"}
+                    >
+                        Decrement -
+                    </Button>
 
 
                     <Button containerStyle={{padding: 10, height: 45, borderRadius: 10, backgroundColor: 'darkviolet'}}
@@ -31,8 +32,10 @@ export default class CounterComponents extends Component {
                             onPress={() => {
                                 this.props.onIncrement(1)
                             }}
-                            title={"Increment +"}
-                    />
+                          //  title={"Increment +"}
+                    >
+                        Increment +
+                    </Button>
 
 
                 </View>

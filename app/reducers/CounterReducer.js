@@ -3,9 +3,9 @@ import{INCREMENT,DECREMENT} from '../actions/actionType'
 const counterReducer=(time=0,action)=>{
     switch (action.type) {
         case INCREMENT:
-            return ++time;
+            return time + action.step;
         case DECREMENT:
-            return --time;
+            return time - action.step;
         default:
             return time
         
